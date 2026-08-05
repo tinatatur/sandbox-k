@@ -1,0 +1,9 @@
+ zn "%SYS"
+ write !,"Switching to MYAPP namespace",!
+ set $namespace="MYAPP"
+
+ write "Importing and compiling classes from /src",!
+ set sc = $system.OBJ.Import("/src","ck/recursive=1/extensions=cls/multicompile=0",,.errors,.imported)
+
+ write "Import completed successfully",!!
+ halt

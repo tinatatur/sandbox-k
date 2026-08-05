@@ -1,0 +1,35 @@
+// For format details, see https://containers.dev/implementors/json_reference/.
+{
+	"name": "Sandbox Cloud Template",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "iris",
+	"workspaceFolder": "/home/irisowner/dev",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"objectscript.conn": {
+					"server": "devcontainer",
+					"active": true
+				},
+				"intersystems.servers": {
+					"devcontainer": {
+						"username": "SuperUser",
+						"webServer": {
+							"scheme": "http",
+							"host": "127.0.0.1",
+							"port": 52773
+						}
+					}
+				}
+			},
+			"extensions": [
+				"intersystems-community.vscode-objectscript",
+				"intersystems.language-server",
+				"intersystems-community.servermanager",
+				"ms-vscode.docker"
+			]
+		}
+	}
+}

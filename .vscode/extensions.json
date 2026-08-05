@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "intersystems-community.servermanager",
+        "intersystems-community.sqltools-intersystems-driver",
+        "intersystems-community.testingmanager",
+        "intersystems-community.vscode-objectscript",
+        "intersystems.language-server",
+        "ms-vscode-remote.remote-containers"
+    ]
+}

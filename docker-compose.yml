@@ -1,0 +1,21 @@
+services:
+  iris:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - ISC_CPF_MERGE_FILE=/home/irisowner/dev/myapp.cpf
+    command: --check-caps false --ISCAgent false
+    ports:
+      - 127.0.0.1:1972:1972
+      - 127.0.0.1:52773:52773
+      - 127.0.0.1:53773:53773
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:52773/myapp/api/test"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    volumes:
+      - ./:/home/irisowner/dev
